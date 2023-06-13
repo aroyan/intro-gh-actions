@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 fs.appendFile(
-  `${new Date().toISOString()}.txt`,
+  `${new Date().toISOString().replace(":", "-")}.txt`,
   `From NodeJS and GitHub Actions
   ${new Date().toISOString()}  
   `,
