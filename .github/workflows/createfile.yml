@@ -19,5 +19,8 @@ jobs:
       - name: Create new File
         run: node ./hello.js
 
-      - name: Commit
-        run: git add . && git commit -m "New file added"
+      - name: Config and Commit
+        run: |
+          git config --global user.email "abssneakers@gmail.com"
+          git config --global user.name "Aroyan"
+          git add . && git commit -m "New file added"
