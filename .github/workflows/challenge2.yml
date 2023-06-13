@@ -1,0 +1,38 @@
+# Push Trigger
+# ENV var for file artifact
+# 1. Checkout actions
+# 2. Upload actions
+
+name: Challenge 2 - Upload an artifact
+
+on:
+  push:
+    branches:
+      - challenge2
+
+jobs:
+  Build-Artifact:
+    name: Create file using nodejs
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: Check node version
+        run: |
+          ls
+          node --version
+
+      - name: Create file using nodejs
+        run: node hello.js
+
+      - name: Check file
+        run: |
+          ls
+          cat HelloWorld.txt
+
+      - name: Upload HelloWorld.txt artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: HelloWorld
+          path: ./HelloWorld.txt
