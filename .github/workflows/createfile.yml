@@ -1,0 +1,23 @@
+name: Create File and Commit
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-file:
+    name: Create file
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check node version
+        run: node --version
+
+      - name: Create new File
+        run: node ./hello.js
+
+      - name: Commit
+        run: git add . && git commit -m "New file added"

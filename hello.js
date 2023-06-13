@@ -1,9 +1,11 @@
 const fs = require("fs");
 
 fs.appendFile(
-  "HelloWorld.txt",
-  "Hello world, this is from nodejs and github actions",
-  function (err) {
+  `${new Date().toISOString()}.txt`,
+  `From NodeJS and GitHub Actions
+  ${new Date().toISOString()}  
+  `,
+  (err) => {
     if (err) throw err;
     console.log("Saved");
   }
