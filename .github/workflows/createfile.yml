@@ -24,3 +24,4 @@ jobs:
           git config --global user.email "abssneakers@gmail.com"
           git config --global user.name "Aroyan"
           git add . && git commit -m "New file added"
+          git push origin -u main
