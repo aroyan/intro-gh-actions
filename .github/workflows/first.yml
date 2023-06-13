@@ -5,7 +5,7 @@ on:
   push:
     branches: ["main"]
 
-job:
+jobs:
   ubuntu-job:
     name: First Job using Ubuntu
     runs-on: ubuntu-latest
