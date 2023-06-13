@@ -2,7 +2,7 @@
 # This job should be printing date on each run
 # Job 4 should be dependent to job 1, 2, 3
 
-name: Challenge 1 - This should only triggered when there is push on dev branch
+name: "Challenge 1 - This should only triggered when there is push on dev branch"
 
 on:
   push:
@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout actions
         uses: actions/checkout@v2
+
+      - name: Print date from ubuntu latest
         run: |
           date "+%H:%M:%S   %d/%m/%y"
           echo "ubuntu latest"
@@ -26,6 +28,8 @@ jobs:
       steps:
         - name: Checkout actions on windows
           uses: actions/checkout@v2
+
+        - name: Print date from windows latest
           run: |
             Get-Date
             echo "Using windows latest"
@@ -36,6 +40,8 @@ jobs:
       steps:
         - name: Checkout actions on mac
           uses: actions/checkout@v2
+
+        - name: Print date from mac latest
           run: |
             date
             echo "Using mac latest"
@@ -48,6 +54,8 @@ jobs:
       steps:
         - name: Checkout actions using ubuntu v20.04
           uses: actions/checkout@v2
+
+        - name: Print date from ubuntu 20.04 dependent with 3 jobs before
           run: |
             date "+%H:%M:%S   %d/%m/%y"
             echo "ubuntu version 20.04"
